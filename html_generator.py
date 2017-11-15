@@ -30,7 +30,8 @@ def generate_dining_hall(hall: Text, name: Text):
     for m in meals:
         try:
             foods = options[m]
-            html = '%s\n<h3>%s</h3>\n\t<ul>\n' % (html, m)
+            if len(foods) > 0:
+                html = '%s\n<h3>%s</h3>\n\t<ul>\n' % (html, m)
             for f in foods:
                 html = '%s\n\t\t<li><a href="#">%s</a></li>' % (html, f)
             html = html + "\n</ul>"
@@ -42,7 +43,7 @@ def generate_dining_hall(hall: Text, name: Text):
 
 def generate_all():
     html = css + "\n"
-    for k, v in dining_halls
+    for k, v in dining_halls:
         print(k)
         html = html + "\n" + generate_dining_hall(k, v)
 
