@@ -98,6 +98,7 @@ def bonAppetit(url: Text, number:Text):
     for k, v in options['items'].items():
         # print(v["label"], v["tier"])
         if int(v['tier']) < 2:
+
             if not v['label'] in item_blacklist:
                 item_mapping[k] = v['label']
         else:

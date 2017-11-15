@@ -14,6 +14,7 @@ img {
 div {
   width: 600px;
   margin: auto;
+  clear: both;
 }
 
 h2 {
@@ -82,7 +83,47 @@ li a:hover {
 .footer:hover .tooltip {
     visibility: visible;
 }
+
+.table {
+    width: 600px;
+    margin: auto;
+}
+
+
+
+.header {
+    width: 600px;
+    margin: auto;
+    background: #f6f6f6;
+}
+
+.header a:link {
+    text-align: center;
+    font: 400 20px/1.5 Helvetica, Verdana, sans-serif;
+    color: #000000;
+    text-decoration: none;
+}
+
+.header th {
+    width: 85px;
+}
+
+
 </style>
 
 <img src=frank.jpg alt="Frunk Dye-ning Hawl">
+
+<div class="header">
+<table>
+  <tr>
+    <th><a href="#frunk">Frank</a></th>
+    <th><a href="#fraar">Frary</a></th>
+    <th><a href="#Borg">Oldenborg</a></th>
+    <th><a href="#collibs">Collins</a></th>
+    <th><a href="#scrapps">Scripps</a></th>
+    <th><a href="#pitz">Pitzer</a></th>
+    <th><a href="#mudd">Mudd</a></th>
+  </tr>
+</table>
+</div>
 """

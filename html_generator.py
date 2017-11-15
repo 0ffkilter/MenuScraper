@@ -22,12 +22,14 @@ def generate_dining_hall(hall: Text, name: Text):
 
     code_begin = """
 <div>
+    <a name="%s"></a>
+    <a name="%s"></a>
     <h2>%s</h2>
 """
     code_end = """
 </div>
 """
-    html = code_begin % (name)
+    html = code_begin % (name, hall, name)
     for m in meals:
         try:
             foods = options[m]
