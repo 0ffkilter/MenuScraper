@@ -1,4 +1,5 @@
 from css import css
+from footer import footer
 from scraper import get_options
 from typing import Text
 import os
@@ -48,6 +49,7 @@ def generate_all():
         print(k)
         html = html + "\n" + generate_dining_hall(k, v)
 
+    html = html + "\n" + footer
     with open("index.html", "w+") as f:
         f.write(html)
 

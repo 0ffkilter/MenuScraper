@@ -50,19 +50,21 @@ def mudd(url: Text):
                         continue
     return meals
 
+
 def sodexo():
     index_url = 'https://scrippsdining.sodexomyway.com/dining-choices/index.html'
     resp = requests.get(index_url)
-    doc = BeautifulSoup(resp.text)
+    doc = BeautifulSoup(resp.text, "lxml")
     menu_url = doc.find_all('div', {'class': 'accordionBody'})[0].find_all('a')[0]['href']
-    url = 'https://scrippsdining.sodexomyway.com' + menu_url # The href attribute is not the full URL for some reason
+    url = 'https://scrippsdining.sodexomyway.com' + menu_url
+    # The href attribute is not the full URL for some reason
     resp = requests.get(url)
 
     text = None
     if resp.status_code == 404:
         return None
     else:
-        text = BeautifulSoup(resp.text)
+        text = BeautifulSoup(resp.text, "lxml")
 
     current_day = datetime.datetime.now().strftime("%A")
     day_node = text.find(id=current_day.lower())
@@ -88,7 +90,6 @@ def get_today():
 
 
 def bonAppetit(url: Text, number:Text):
-    print(url)
     raw_string = requests.get(url).text
     options = json.loads(raw_string)
 

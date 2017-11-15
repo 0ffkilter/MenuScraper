@@ -57,8 +57,30 @@ li a {
 }
 
 li a:hover {
-  font-size: 30px;
   background: #f6f6f6;
+}
+
+.footer {
+  margin: auto;
+  padding: 1rem;
+  background-color: #efefef;
+  text-align: center;
+  font: 400 10px/1.5 Helvetica, Verdana, sans-serif;
+}
+
+.footer .tooltip {
+    visibility: hidden;
+    width: 220px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    z-index: 1;
+}
+
+.footer:hover .tooltip {
+    visibility: visible;
 }
 </style>
 
