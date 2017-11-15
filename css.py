@@ -1,7 +1,16 @@
 
 css = """
 <title>5c menuuu</title>
+
+
 <style>
+img {
+    width: 600px;
+    height: 180px;
+    display: block;
+    margin: auto;
+}
+
 div {
   width: 600px;
   margin: auto;
@@ -52,4 +61,6 @@ li a:hover {
   background: #f6f6f6;
 }
 </style>
+
+<img src=frank.jpg alt="Frunk Dye-ning Hawl">
 """
