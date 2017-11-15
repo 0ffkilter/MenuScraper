@@ -158,6 +158,8 @@ def pomona(url: Text, is_oldenborg: bool=False):
                 day, meal = oldenborg_map(cell_num)
         except KeyError:
             continue
+        if cell_content == meal:
+            continue
         if day not in meals:
             meals[day] = {meal: [cell_content]}
         else:
