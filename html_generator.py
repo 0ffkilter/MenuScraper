@@ -32,9 +32,10 @@ def generate_dining_hall(hall: Text, name: Text):
             foods = options[m]
             if len(foods) > 0:
                 html = '%s\n<h3>%s</h3>\n\t<ul>\n' % (html, m)
-            for f in foods:
-                html = '%s\n\t\t<li><a href="#">%s</a></li>' % (html, f)
-            html = html + "\n</ul>"
+                for f in foods:
+                    if f != m:
+                        html = '%s\n\t\t<li><a href="#">%s</a></li>' % (html, f)
+                html = html + "\n</ul>"
         except KeyError:
             continue
     html = '%s\n%s' % (html, code_end)
