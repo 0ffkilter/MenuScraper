@@ -3,20 +3,19 @@ from scraper import get_options
 from typing import Text
 import os
 
-print(os.getcwd())
 
-dining_halls = {
-    "frank": "frunk",
-    "frary": "fraar",
-    "oldenborg": "Borg",
-    "cmc": "collibs",
-    "scripps": "scrapp",
-    "pitzer": "pitz",
-    "mudd": "Let's go somewhere closer (Mudd)"
-}
+dining_halls = [
+    ("frank","frunk"),
+    ("frary", "fraar"),
+    ("oldenborg", "Borg"),
+    ("cmc", "collibs"),
+    ("scripps", "scrapp"),
+    ("pitzer", "pitz"),
+    ("mudd", "Let's go somewhere closer (Mudd)")
+]
 
 
-def generate_dining_hall(hall: Text):
+def generate_dining_hall(hall: Text, name: Text):
     meals = ["Breakfast", "Brunch", "Lunch", "Dinner"]
     options = get_options(hall)
 
@@ -27,7 +26,7 @@ def generate_dining_hall(hall: Text):
     code_end = """
 </div>
 """
-    html = code_begin % (dining_halls[hall])
+    html = code_begin % (name)
     for m in meals:
         try:
             foods = options[m]
@@ -43,9 +42,9 @@ def generate_dining_hall(hall: Text):
 
 def generate_all():
     html = css + "\n"
-    for k, v in dining_halls.items():
+    for k, v in dining_halls
         print(k)
-        html = html + "\n" + generate_dining_hall(k)
+        html = html + "\n" + generate_dining_hall(k, v)
 
     with open("index.html", "w+") as f:
         f.write(html)
