@@ -169,9 +169,9 @@ def get_options(dining_hall: Text):
     elif dining_hall is "frary":
         items = pomona('https://spreadsheets.google.com/feeds/cells/10nqbUUFuBmQty49uq7vSJzplQpdL7CHkRvLLAt6klP0/o62wyvq/public/basic?alt=json')
     elif dining_hall is "cmc":
-        items = bonAppetit(f'http://legacy.cafebonappetit.com/api/2/menus?format=json&cafe=50&date={get_today()}', '50')
+        items = bonAppetit('http://legacy.cafebonappetit.com/api/2/menus?format=json&cafe=50&date=%s' % (get_today()), '50')
     elif dining_hall is "pitzer":
-        items = bonAppetit(f'http://legacy.cafebonappetit.com/api/2/menus?format=json&cafe=219&date={get_today()}', '219')
+        items = bonAppetit('http://legacy.cafebonappetit.com/api/2/menus?format=json&cafe=219&date=%s' % (get_today()), '219')
     elif dining_hall is "scripps":
         items = sodexo()
     elif dining_hall is "mudd":

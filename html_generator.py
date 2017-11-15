@@ -31,13 +31,13 @@ def generate_dining_hall(hall: Text):
     for m in meals:
         try:
             foods = options[m]
-            html = f'{html}\n<h3>{m}</h3>\n\t<ul>\n'
+            html = '%s\n<h3>%s</h3>\n\t<ul>\n' % (html, m)
             for f in foods:
-                html = f'{html}\n\t\t<li><a href="#">{f}</a></li>'
+                html = '%s\n\t\t<li><a href="#">%s</a></li>' % (html, f)
             html = html + "\n</ul>"
         except KeyError:
             continue
-    html = f'{html}\n{code_end}'
+    html = '%s\n%s' % (html, code_end)
     return html
 
 
@@ -49,6 +49,7 @@ def generate_all():
 
     with open("index.html", "w+") as f:
         f.write(html)
+
 
 if __name__ == "__main__":
     generate_all()
