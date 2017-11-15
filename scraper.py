@@ -94,9 +94,16 @@ def bonAppetit(url: Text, number:Text):
     options = json.loads(raw_string)
 
     item_mapping = {}
+    item_blacklist = set()
     for k, v in options['items'].items():
+        # print(v["label"], v["tier"])
         if int(v['tier']) < 2:
-            item_mapping[k] = v['label']
+            if not v['label'] in item_blacklist:
+                item_mapping[k] = v['label']
+        else:
+            item_blacklist.add(v['label'])
+            if k in item_mapping:
+                item_mapping.remove(k)
 
     # Preserve format with Pomona formatting
     items = {}
