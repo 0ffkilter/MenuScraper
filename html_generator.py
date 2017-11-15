@@ -9,7 +9,7 @@ dining_halls = [
     ("frary", "fraar"),
     ("oldenborg", "Borg"),
     ("cmc", "collibs"),
-    ("scripps", "scrapp"),
+    ("scripps", "scrapps"),
     ("pitzer", "pitz"),
     ("mudd", "Let's go somewhere closer (Mudd)")
 ]
